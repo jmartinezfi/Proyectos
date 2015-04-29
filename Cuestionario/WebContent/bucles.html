@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>AngularJS - Bucles</title>
+<script src= "js/angular.js"></script>
+</head>
+<body>
+<div ng-init="datos = [];">
+    <h1>Bucles</h1>
+    <p>
+        Nuevo:
+        <br />
+        <input type="text" ng-model="nuevo" /> 
+        <input type="button" value="Agregar" ng-click="datos.push(nuevo); nuevo = '';" />
+    </p>
+    <h2>Datos</h2>
+    <p ng-repeat="dato in datos" ng-init="paso = $index">
+        Dato {{$index+1}}: {{dato}} .<input type="button" value="Quitar" ng-click="datos.splice($index,1);" />
+    </p>
+    <p>Total {{datos.length}}</p>
+</div>
+</body>
+</html>

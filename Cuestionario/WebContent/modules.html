@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="modulo">
+<head>
+<title>AngularJS - Modulos</title>
+<script src="js/angular.js"></script>
+<script src="js/modulo.js"></script>
+<link rel="stylesheet" type="text/css" href="css/tema.css">
+</head>
+<body>
+	<div ng-init="datos = [];">
+		<h1>Bucles</h1>
+		<p>
+			Nuevo: <input type="text" ng-model="nuevo" value="" /> <input
+				type="button" value="Agregar"
+				ng-click="datos.push(nuevo); nuevo = '';" />
+		</p>
+		<p>
+			Filtro: <input type="text" ng-model="filtro" /> Ordenar <input
+				type="checkbox" ng-model="orden" />
+		</p>
+		<h2>Datos</h2>
+		<p ng-repeat="dato in datos | filter: filtro | orderBy : dato : orden"
+			ng-init="paso = $index">
+			Dato {{$index+1}}: {{dato}} .<input type="button" value="Quitar"
+				ng-click="datos.splice($index,1);" />
+		</p>
+		<p>Total {{datos.length}}</p>
+	</div>
+	<div ng-controller="moduloCtrl as vm">{{vm.dato}}</div>
+	<div ng-controller="acumuladorAppCtrl as v">
+		<h1>Acumulador</h1>
+		<h2>Control de operacin:</h2>
+		Monto <input type="text" ng-model="v.cuanto" size="4" /> <br /> <input
+			type="button" value="+" ng-click="v.sumar()" /> <input type="button"
+			value="-" ng-click="v.restar()" />
+		<h2>Totales:</h2>
+		<p ng-class="{positivo: v.total>=0, negativo: v.total<0}">
+			En el acumulador llevamos <span>{{v.total}}</span>
+		</p>
+	</div>
+</body>
+</html>

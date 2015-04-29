@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>AngularJS - Test 2</title>
+<script src= "js/angular.js"></script>
+</head>
+
+<body>
+
+<div>
+ 
+<p>Test inicial de angular</p>
+<p>Nombre : <input type="text" ng-model="name" placeholder="Ingrese nombre"></p>
+<h1>Hola {{name}}</h1>
+
+<input type="button" value="Limpiar Nombre" ng-click="name=''" />
+
+
+<p>Concatenado datos</p>
+<p>Nombre : <input type="text" ng-model="n1" placeholder="Nombre"></p>
+<p>Apellidos : <input type="text" ng-model="n2" placeholder="Apellidos"></p>
+<h1>Total {{n1 + " " +  n2}}</h1>
+<input type="button" value="Limpiar" ng-click="n1='';n2=''" />
+
+<p>Numeros</p>
+<p>Num1 : <input type="text" ng-model="num1" placeholder="Numero"></p>
+<h1>Total {{(num1 | number:2  )}}</h1>
+
+</div>
+
+</body>
+</html>

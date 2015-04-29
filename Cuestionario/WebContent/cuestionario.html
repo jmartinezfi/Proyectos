@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=es-ES ng-app=CuestionarioApp>
+<head>
+<meta charset=utf-8>
+<meta name=viewport
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cuestionario App</title>
+<link rel=icon type=image/png href=images/favicon.ico>
+<script src=js/angular.js></script>
+<script src=js/angular-touch.js></script>
+<script src=js/cuestionario.js></script>
+<script src=js/componentes.js></script>
+<script src=js/templates.js></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/justified.css">
+<link rel="stylesheet" href="css/tema.css">
+</head>
+<body class=not-touch>
+	<div class=container ng-controller=CuestionarioController>
+		<cabecera></cabecera>
+		<div class=listado></div>
+		 <div class=listadoCuestionario></div> 
+		<pie></pie> 
+	</div>
+</body>
+</html>
